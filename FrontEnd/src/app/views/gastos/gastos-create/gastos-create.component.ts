@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Gastos } from 'src/app/models/gastos/gastos.model';
 
 @Component({
   selector: 'app-gastos-create',
@@ -36,6 +37,15 @@ export class GastosCreateComponent implements OnInit {
     'Novembro',
     'Dezembro'
   ]
+
+  gastosDados: Gastos = {
+    id: 0,
+    tipoGasto: 0,
+    tipoPagamento: 0,
+    nomeCartao: '',
+    valor: 0,
+    mes: ''
+  }
 
   constructor(private router: Router) { }
 
