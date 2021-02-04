@@ -1,0 +1,15 @@
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.Data\bin\Debug\netcoreapp3.1\Financias.Domain.dll
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.Data\obj\Debug\netcoreapp3.1\Financias.Infra.Data.csprojAssemblyReference.cache
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.Data\obj\Debug\netcoreapp3.1\Financias.Infra.Data.AssemblyInfoInputs.cache
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.Data\obj\Debug\netcoreapp3.1\Financias.Infra.Data.AssemblyInfo.cs
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.Data\bin\Debug\netcoreapp3.1\Financias.Infra.Data.deps.json
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.Data\bin\Debug\netcoreapp3.1\Financias.Infra.Data.runtimeconfig.json
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.Data\bin\Debug\netcoreapp3.1\Financias.Infra.Data.runtimeconfig.dev.json
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.Data\bin\Debug\netcoreapp3.1\Financias.Infra.Data.dll
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.Data\bin\Debug\netcoreapp3.1\Financias.Infra.Data.pdb
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.Data\bin\Debug\netcoreapp3.1\Financias.Domain.pdb
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.Data\obj\Debug\netcoreapp3.1\Financias.Infra.Data.csproj.CoreCompileInputs.cache
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.Data\obj\Debug\netcoreapp3.1\Financias.Infra.Data.csproj.CopyComplete
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.Data\obj\Debug\netcoreapp3.1\Financias.Infra.Data.dll
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.Data\obj\Debug\netcoreapp3.1\Financias.Infra.Data.pdb
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.Data\obj\Debug\netcoreapp3.1\Financias.Infra.Data.genruntimeconfig.cache

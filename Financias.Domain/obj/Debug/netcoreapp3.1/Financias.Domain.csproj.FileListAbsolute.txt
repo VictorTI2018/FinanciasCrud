@@ -1,0 +1,9 @@
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Domain\bin\Debug\netcoreapp3.1\Financias.Domain.deps.json
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Domain\bin\Debug\netcoreapp3.1\Financias.Domain.dll
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Domain\bin\Debug\netcoreapp3.1\Financias.Domain.pdb
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Domain\obj\Debug\netcoreapp3.1\Financias.Domain.csprojAssemblyReference.cache
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Domain\obj\Debug\netcoreapp3.1\Financias.Domain.AssemblyInfoInputs.cache
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Domain\obj\Debug\netcoreapp3.1\Financias.Domain.AssemblyInfo.cs
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Domain\obj\Debug\netcoreapp3.1\Financias.Domain.csproj.CoreCompileInputs.cache
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Domain\obj\Debug\netcoreapp3.1\Financias.Domain.dll
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Domain\obj\Debug\netcoreapp3.1\Financias.Domain.pdb
