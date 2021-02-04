@@ -3,5 +3,11 @@
         Novo Gasto
     </button>
 </div>
-
-<app-gastos-list></app-gastos-list>
+<mat-form-field appearance="fill" class="mt-1">
+    <mat-label>Selecione um Mês</mat-label>
+    <mat-select [(ngModel)]="mes" name="mes" (ngModelChange)="onChangeMes($event)">
+        <mat-option *ngFor="let mes of meses" 
+        [value]="mes">{{ mes }}</mat-option>
+    </mat-select>
+</mat-form-field>
+<app-gastos-list [gastos]="gastos"></app-gastos-list>

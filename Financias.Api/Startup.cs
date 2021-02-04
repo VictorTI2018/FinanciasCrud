@@ -44,6 +44,9 @@ namespace Financias.Api
             IMapper mapper = config.CreateMapper();
             services.AddSingleton(mapper);
 
+
+            services.AddCors();
+
             services.AddRepositoryDependency();
             services.AddServicesDependency();
 
@@ -59,6 +62,8 @@ namespace Financias.Api
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors(c => c.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseRouting();
 

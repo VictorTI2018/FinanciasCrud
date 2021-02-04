@@ -24,6 +24,12 @@ namespace Financias.Api.Controllers
             _mapper = mapper;
         }
 
+        [HttpGet("{mes}")]
+        public async Task<IActionResult> BuscarTodos(string mes)
+        {
+            return Ok(await _serviceGastos.BuscarTodos(mes));
+        }
+
         [HttpPost]
         public async Task<IActionResult> Cadastrar(GastosDadosDto gastosDadosDto)
         {

@@ -1,5 +1,8 @@
+import { Gastos } from './../../models/gastos/gastos.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { GastosService } from '../../services/gastos/gastos.service'
 
 @Component({
   selector: 'app-gastos',
@@ -8,13 +11,45 @@ import { Router } from '@angular/router';
 })
 export class GastosComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  meses = [
+    'Janeiro',
+    'Fevereiro',
+    'Março',
+    'Abril',
+    'Maio',
+    'Junho',
+    'Julho',
+    'Agosto',
+    'Setembro',
+    'Outubro',
+    'Novembro',
+    'Dezembro'
+  ]
+
+  mes: string = ''
+
+  gastos: Gastos[] = []
+
+  constructor(private router: Router, private gastosService: GastosService) { }
+
+  
 
   ngOnInit(): void {
   }
 
   novoGasto () : void {
     this.router.navigate(['/gastos/dados'])
+  }
+
+  onChangeMes (mes: string): void {
+    this.buscarTodosPorMes(mes)
+  }
+
+  buscarTodosPorMes (mes: string) {
+    this.gastosService.getAll(mes)
+    .subscribe(result => {
+      this.gastos = result
+    })
   }
 
 }

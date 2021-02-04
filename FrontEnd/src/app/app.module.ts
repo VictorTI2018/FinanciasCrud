@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http'
+
+import { RequestInterceptor } from './interceptor/request.interceptor'
+
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatButtonModule } from '@angular/material/button'
@@ -22,6 +26,7 @@ import { GastosListComponent } from './views/gastos/gastos-list/gastos-list.comp
 import { GastosCreateComponent } from './views/gastos/gastos-create/gastos-create.component';
 import { TipoGastosPipe } from './pipes/tipo-gastos.pipe';
 import { TipoPagamentoPipe } from './pipes/tipo-pagamento.pipe';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -47,9 +52,14 @@ import { TipoPagamentoPipe } from './pipes/tipo-pagamento.pipe';
     MatInputModule,
     MatCardModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: RequestInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
