@@ -1,0 +1,15 @@
+.row-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    margin-bottom: 10px;
+   flex-basis: 48%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+}

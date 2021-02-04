@@ -5,6 +5,11 @@ import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatButtonModule } from '@angular/material/button'
 import { MatListModule } from '@angular/material/list'
+import { FormsModule } from '@angular/forms'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input'
+import { MatCardModule } from '@angular/material/card'
+import { MatSelectModule } from '@angular/material/select'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +19,9 @@ import { FooterComponent } from './components/templates/footer/footer.component'
 import { NavComponent } from './components/templates/nav/nav.component';
 import { GastosComponent } from './views/gastos/gastos.component';
 import { GastosListComponent } from './views/gastos/gastos-list/gastos-list.component';
+import { GastosCreateComponent } from './views/gastos/gastos-create/gastos-create.component';
+import { TipoGastosPipe } from './pipes/tipo-gastos.pipe';
+import { TipoPagamentoPipe } from './pipes/tipo-pagamento.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +30,10 @@ import { GastosListComponent } from './views/gastos/gastos-list/gastos-list.comp
     FooterComponent,
     NavComponent,
     GastosComponent,
-    GastosListComponent
+    GastosListComponent,
+    GastosCreateComponent,
+    TipoGastosPipe,
+    TipoPagamentoPipe
   ],
   imports: [
     BrowserModule,
@@ -31,7 +42,12 @@ import { GastosListComponent } from './views/gastos/gastos-list/gastos-list.comp
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
+    FormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

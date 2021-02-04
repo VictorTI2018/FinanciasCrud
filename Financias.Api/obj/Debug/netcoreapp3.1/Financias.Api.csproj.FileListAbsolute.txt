@@ -65,3 +65,8 @@ C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Api\obj\D
 C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Api\obj\Debug\netcoreapp3.1\Financias.Api.genruntimeconfig.cache
 C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Api\bin\Debug\netcoreapp3.1\Financias.Infra.CrossCutting.dll
 C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Api\bin\Debug\netcoreapp3.1\Financias.Services.dll
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Api\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Api\bin\Debug\netcoreapp3.1\Financias.Infra.Shared.dll
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Api\bin\Debug\netcoreapp3.1\Financias.Infra.CrossCutting.pdb
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Api\bin\Debug\netcoreapp3.1\Financias.Infra.Shared.pdb
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Api\bin\Debug\netcoreapp3.1\Financias.Services.pdb

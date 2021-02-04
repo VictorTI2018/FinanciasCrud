@@ -1,0 +1,40 @@
+<mat-card>
+    <mat-card-title class="mb-1">
+        Novo Gasto
+    </mat-card-title>
+    <mat-card-content>
+        <form>
+            <div class="row-container">
+                <mat-form-field appearance="legacy" class="form-group">
+                    <mat-label>Tipo do Gasto</mat-label>
+                    <mat-select >
+                        <mat-option *ngFor="let tipo of tipoGastos" 
+                        [value]="tipo.value">{{ tipo.label }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="legacy" class="form-group">
+                    <mat-label>Tipo do Pagamento</mat-label>
+                    <mat-select >
+                        <mat-option *ngFor="let tipo of tipoPagamento" 
+                        [value]="tipo.value">{{ tipo.label }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="legacy" class="form-group">
+                    <mat-label>Mês</mat-label>
+                    <mat-select >
+                        <mat-option *ngFor="let mes of meses" 
+                        [value]="mes">{{ mes }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="legacy" class="form-group">
+                    <mat-label>Valor</mat-label>
+                    <input matInput placeholder="Valor do gasto...">
+                </mat-form-field>
+            </div>
+        </form>
+    </mat-card-content>
+    <mat-card-actions class="button-container">
+        <button mat-raised-button color="warn" (click)="voltar()">Voltar</button>
+        <button mat-raised-button color="primary">Salvar</button>
+    </mat-card-actions>
+</mat-card>

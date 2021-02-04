@@ -1,0 +1,16 @@
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.CrossCutting\bin\Debug\netcoreapp3.1\Financias.Infra.CrossCutting.deps.json
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.CrossCutting\bin\Debug\netcoreapp3.1\Financias.Infra.CrossCutting.dll
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.CrossCutting\bin\Debug\netcoreapp3.1\Financias.Infra.CrossCutting.pdb
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.CrossCutting\bin\Debug\netcoreapp3.1\Financias.Domain.dll
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.CrossCutting\bin\Debug\netcoreapp3.1\Financias.Infra.Data.dll
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.CrossCutting\bin\Debug\netcoreapp3.1\Financias.Services.dll
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.CrossCutting\bin\Debug\netcoreapp3.1\Financias.Domain.pdb
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.CrossCutting\bin\Debug\netcoreapp3.1\Financias.Infra.Data.pdb
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.CrossCutting\bin\Debug\netcoreapp3.1\Financias.Services.pdb
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.CrossCutting\obj\Debug\netcoreapp3.1\Financias.Infra.CrossCutting.csprojAssemblyReference.cache
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.CrossCutting\obj\Debug\netcoreapp3.1\Financias.Infra.CrossCutting.AssemblyInfoInputs.cache
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.CrossCutting\obj\Debug\netcoreapp3.1\Financias.Infra.CrossCutting.AssemblyInfo.cs
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.CrossCutting\obj\Debug\netcoreapp3.1\Financias.Infra.CrossCutting.csproj.CoreCompileInputs.cache
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.CrossCutting\obj\Debug\netcoreapp3.1\Financias.Infra.CrossCutting.csproj.CopyComplete
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.CrossCutting\obj\Debug\netcoreapp3.1\Financias.Infra.CrossCutting.dll
+C:\Users\victo\OneDrive\Documentos\Victor\Projetos\Financias\Financias.Infra.CrossCutting\obj\Debug\netcoreapp3.1\Financias.Infra.CrossCutting.pdb

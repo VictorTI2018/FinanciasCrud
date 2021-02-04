@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Financias.Services/1.0.0": {
+        "dependencies": {
+          "Financias.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Financias.Services.dll": {}
+        }
+      },
+      "Financias.Domain/1.0.0": {
+        "runtime": {
+          "Financias.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Financias.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Financias.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
