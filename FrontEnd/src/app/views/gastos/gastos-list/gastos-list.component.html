@@ -32,8 +32,8 @@
                 [checked]="item.situacaoConta === 0 ? false : true">{{ item.situacaoConta === 0 ? 'Pendente' : 'Pago'}}</mat-checkbox>
             </td>
             <td >
-                <i class="material-icons edit" (click)="editar(item.id)">mode_edit</i>
-                <i class="material-icons delete" (click)="deletar(item.id)">cancel</i>
+                <i class="material-icons edit" (click)="editar(item.id)" title="Ver detalhes">mode_edit</i>
+                <i class="material-icons delete" (click)="deletar(item.id)" title="Remover">cancel</i>
             </td>
         </tr>
     </tbody>

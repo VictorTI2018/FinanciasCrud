@@ -13,32 +13,38 @@
                 <mat-form-field appearance="legacy" class="form-group">
                     <mat-label>Tipo do Gasto</mat-label>
                     <mat-select formControlName="tipoGasto"
-                        [ngClass]="{'is-invalid': submitted && form.tipoGasto.errors }">
+                        [ngClass]="{'is-invalid': submitted && form.tipoGasto.errors }" 
+                        title="Tipo do Gasto">
                         <mat-option *ngFor="let tipo of tipoGastos" [value]="tipo.value">{{ tipo.label }}</mat-option>
                     </mat-select>
                 </mat-form-field>
                 <mat-form-field appearance="legacy" class="form-group">
                     <mat-label>Tipo do Pagamento</mat-label>
                     <mat-select formControlName="tipoPagamento"
-                        [ngClass]="{'is-invalid': submitted && form.tipoGasto.errors }">
+                        [ngClass]="{'is-invalid': submitted && form.tipoGasto.errors }" 
+                        title="Tipo do Pagamento">
                         <mat-option *ngFor="let tipo of tipoPagamento" [value]="tipo.value">{{ tipo.label }}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
                 <mat-form-field appearance="legacy" class="form-group">
                     <mat-label>Mês</mat-label>
-                    <mat-select formControlName="mes" [ngClass]="{'is-invalid': submitted && form.tipoGasto.errors }">
+                    <mat-select formControlName="mes" 
+                        [ngClass]="{'is-invalid': submitted && form.tipoGasto.errors }"
+                         title="Qual mês?">
                         <mat-option *ngFor="let mes of meses" [value]="mes">{{ mes }}</mat-option>
                     </mat-select>
                 </mat-form-field>
                 <mat-form-field appearance="legacy" class="form-group">
                     <mat-label>Valor</mat-label>
                     <input type="number" matInput placeholder="Valor do gasto..." formControlName="valor"
-                        [ngClass]="{'is-invalid': submitted && form.tipoGasto.errors }">
+                        [ngClass]="{'is-invalid': submitted && form.tipoGasto.errors }"
+                         title="Valor do gasto">
                 </mat-form-field>
                 <mat-form-field class="form-group-full">
                     <mat-label>Descrição</mat-label>
-                    <textarea matInput placeholder="Detalhes do gasto..." formControlName="descricao"></textarea>
+                    <textarea matInput placeholder="Detalhes do gasto..." formControlName="descricao" 
+                    title="Detalhes"></textarea>
                 </mat-form-field>
 
             </div>
