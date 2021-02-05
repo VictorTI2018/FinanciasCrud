@@ -10,5 +10,7 @@ namespace Financias.Domain.Interfaces.Services
     public interface IServiceGastos: IServiceBase<Gastos>
     {
         Task<List<GastosListaDto>> BuscarTodos(string mes);
+
+        Task<GastoDto> BuscarPorId(int id);
     }
 }

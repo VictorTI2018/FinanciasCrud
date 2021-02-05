@@ -26,6 +26,11 @@ export class GastosService {
     return this.httpClient.get<Gastos[]>(urlBase)
   }
 
+  getById(id: number): Observable<Gastos> {
+    const urlBase = `${this.baseUrl}/obterPorId/${id}`
+    return this.httpClient.get<Gastos>(urlBase)
+  }
+
   create (gastos: Gastos): Observable<Gastos> {
     return this.httpClient.post<Gastos>(this.baseUrl, gastos)
   }

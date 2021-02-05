@@ -30,6 +30,13 @@ namespace Financias.Api.Controllers
             return Ok(await _serviceGastos.BuscarTodos(mes));
         }
 
+        [HttpGet]
+        [Route("obterPorId/{id}")]
+        public async Task<IActionResult> BuscarPorId(int id)
+        {
+            return Ok(await _serviceGastos.BuscarPorId(id));
+        }
+
         [HttpPost]
         public async Task<IActionResult> Cadastrar(GastosDadosDto gastosDadosDto)
         {

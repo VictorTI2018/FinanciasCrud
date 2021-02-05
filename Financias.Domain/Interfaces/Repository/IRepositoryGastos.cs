@@ -8,5 +8,7 @@ namespace Financias.Domain.Interfaces.Repository
     public interface IRepositoryGastos : IRepositoryBase<Gastos>
     {
         Task<List<GastosListaDto>> BuscarTodos(string mes);
+
+        Task<GastoDto> BuscarPorId(int id);
     }
 }

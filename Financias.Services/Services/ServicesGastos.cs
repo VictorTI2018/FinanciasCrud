@@ -22,5 +22,10 @@ namespace Financias.Services.Services
         {
             return await _repositoryGastos.BuscarTodos(mes);
         }
+
+        public async Task<GastoDto> BuscarPorId(int id)
+        {
+            return await _repositoryGastos.BuscarPorId(id);
+        }
     }
 }

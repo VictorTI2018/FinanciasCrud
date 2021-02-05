@@ -37,3 +37,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: #FFF;
     font-size: 1.2rem;
 }
+
+.alert-success {
+    background-color: rgb(7, 196, 7);
+    color: #FFF;
+    font-size: 1.2rem;
+}

@@ -37,6 +37,10 @@ export class GastosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  editar (event: any) {
+    this.router.navigate(['/gastos/dados', event])
+  }
+
   novoGasto () : void {
     this.router.navigate(['/gastos/dados'])
   }

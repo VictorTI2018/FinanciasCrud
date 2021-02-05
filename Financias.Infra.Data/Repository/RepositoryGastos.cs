@@ -30,5 +30,14 @@ namespace Financias.Infra.Data.Repository
                 .AsNoTracking()
                 .ToListAsync();
         }
+
+        public async Task<GastoDto> BuscarPorId(int id)
+        {
+            return await _sqlContext
+                .Gastos.Where(x => x.Id == id)
+                .Select(GastoDto.Gasto)
+                .AsNoTracking()
+                .FirstOrDefaultAsync();
+        }
     }
 }

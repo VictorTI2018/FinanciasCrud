@@ -25,7 +25,7 @@
                 {{ item.valor | currency}}
             </td>
             <td >
-                <i class="material-icons edit">mode_edit</i>
+                <i class="material-icons edit" (click)="editar(item.id)">mode_edit</i>
                 <i class="material-icons delete">cancel</i>
             </td>
         </tr>

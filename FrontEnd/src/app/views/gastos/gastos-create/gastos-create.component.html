@@ -11,35 +11,31 @@
                     <mat-select formControlName="tipoGasto" [ngClass]="{'is-invalid': submitted && form.tipoGasto.errors }">
                         <mat-option *ngFor="let tipo of tipoGastos" [value]="tipo.value">{{ tipo.label }}</mat-option>
                     </mat-select>
-                    <div *ngIf="submitted && form.tipoGasto.errors" class="invalid">
-                        <div *ngIf="form.tipoGasto.errors.required">
-                            Tipo do Gasto é obrigátorio
-                        </div>
-                    </div>
                 </mat-form-field>
                 <mat-form-field appearance="legacy" class="form-group">
                     <mat-label>Tipo do Pagamento</mat-label>
-                    <mat-select>
+                    <mat-select formControlName="tipoPagamento" [ngClass]="{'is-invalid': submitted && form.tipoGasto.errors }">
                         <mat-option *ngFor="let tipo of tipoPagamento" [value]="tipo.value">{{ tipo.label }}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
                 <mat-form-field appearance="legacy" class="form-group">
                     <mat-label>Mês</mat-label>
-                    <mat-select>
+                    <mat-select formControlName="mes" [ngClass]="{'is-invalid': submitted && form.tipoGasto.errors }">
                         <mat-option *ngFor="let mes of meses" [value]="mes">{{ mes }}</mat-option>
                     </mat-select>
                 </mat-form-field>
                 <mat-form-field appearance="legacy" class="form-group">
                     <mat-label>Valor</mat-label>
-                    <input matInput placeholder="Valor do gasto...">
+                    <input type="number" matInput placeholder="Valor do gasto..." formControlName="valor" [ngClass]="{'is-invalid': submitted && form.tipoGasto.errors }">
                 </mat-form-field>
             </div>
 
         </mat-card-content>
         <mat-card-actions class="button-container">
             <button mat-raised-button color="warn" (click)="voltar()">Voltar</button>
-            <button mat-raised-button color="primary">Salvar</button>
+            <button mat-raised-button color="primary" 
+            [disabled]="!registerForm.valid">Salvar</button>
         </mat-card-actions>
     </form>
 </mat-card>

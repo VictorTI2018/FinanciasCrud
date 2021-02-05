@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'gastos/dados',
     component: GastosCreateComponent
+  },
+  {
+    path: 'gastos/dados/:id',
+    component: GastosCreateComponent
   }
 ];
 

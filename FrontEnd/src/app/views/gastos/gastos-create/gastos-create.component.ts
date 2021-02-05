@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms'
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatSnackBar } from '@angular/material/snack-bar'
@@ -28,11 +28,27 @@ export class GastosCreateComponent implements OnInit {
   registerForm = new FormGroup({
     tipoGasto: new FormControl('', [
       Validators.required
+    ]),
+    tipoPagamento: new FormControl('', [
+      Validators.required
+    ]),
+    mes: new FormControl('', [
+      Validators.required
+    ]),
+    valor: new FormControl(0, [
+      Validators.required
     ])
   });
   submitted = false
 
   matcher = new MyErrorStateMatcher()
+
+  gasto: Gastos = {
+    tipoGasto: 0,
+    tipoPagamento: 0,
+    mes: '',
+    valor: 0
+  }
 
   tipoGastos = [
     { label: 'Agua', value: 0},
@@ -64,11 +80,14 @@ export class GastosCreateComponent implements OnInit {
   ]
 
 
-  constructor(private router: Router, private gastosService: GastosService, 
-    private snackBar: MatSnackBar,) { }
+  constructor(private router: Router, private gastosService: GastosService,
+    private routerParams: ActivatedRoute ) { }
 
   ngOnInit(): void {
-   
+    if(this.routerParams.snapshot.paramMap.get('id') !== null) {
+      let id = Number(this.routerParams.snapshot.paramMap.get('id'))
+      this.buscarGasto(id)
+    }
   }
 
   handleSubmit () :void {
@@ -77,10 +96,20 @@ export class GastosCreateComponent implements OnInit {
       this.errorMessage()
       return
     }
+    this.salvar()
   }
 
   salvar (): void {
-
+    this.gasto = this.registerForm.value
+    this.gastosService.create(this.gasto)
+    .subscribe(result => {
+      this.gastosService.showMessage({
+        msg: 'Gasto cadastrado com sucesso!',
+        duration: 3000,
+        classBgColor: 'alert-success'
+      })
+    })
+    this.voltar()
   }
 
   voltar () {
@@ -99,6 +128,18 @@ export class GastosCreateComponent implements OnInit {
       msg: 'Por favor, corrija os campos em vermelhos',
       duration: 3000,
       classBgColor: 'alert-danger'
+    })
+  }
+
+  buscarGasto (id: number) {
+    this.gastosService.getById(id)
+    .subscribe(result => {
+      this.registerForm.patchValue({
+        tipoGasto: result.tipoGasto,
+        tipoPagamento: result.tipoPagamento,
+        mes: result.mes,
+        valor: result.valor
+      })
     })
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Gastos } from 'src/app/models/gastos/gastos.model';
 
 @Component({
@@ -9,6 +9,9 @@ import { Gastos } from 'src/app/models/gastos/gastos.model';
 export class GastosListComponent implements OnInit {
 
   @Input() gastos: Gastos[] = []
+
+  @Output()
+  editarFn: EventEmitter<any> = new EventEmitter<any>()
 
   headers = [
     { label: 'Codigo', value: 'id' },
@@ -24,5 +27,7 @@ export class GastosListComponent implements OnInit {
   }
 
   
-
+  editar (id: any) {
+    this.editarFn.emit(id)
+  }
 }
