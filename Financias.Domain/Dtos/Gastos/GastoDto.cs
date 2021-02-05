@@ -19,6 +19,10 @@ namespace Financias.Domain.Dtos
 
         public decimal Valor { get; set; }
 
+        public SituacaoConta SituacaoConta { get; set; }
+
+        public string Descricao { get; set; }
+
         public static Expression<Func<Gastos, GastoDto>> Gasto
         {
             get
@@ -29,7 +33,9 @@ namespace Financias.Domain.Dtos
                     TipoGasto = x.TipoGasto,
                     TipoPagamento = x.TipoPagamento,
                     Valor = x.Valor,
-                    Mes = x.Mes
+                    Mes = x.Mes,
+                    SituacaoConta = x.SituacaoConta,
+                    Descricao = x.Descricao
                 };
             }
         }

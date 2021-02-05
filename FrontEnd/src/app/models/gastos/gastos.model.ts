@@ -5,6 +5,14 @@ export interface Gastos {
     nomeCartao?: string
     mes: string,
     valor: number
+    situacaoConta?: SituacaoConta,
+    descricao?: string
+    situacao?: boolean | undefined
+}
+
+export enum SituacaoConta {
+    Pedente,
+    Pago
 }
 
 export enum TipoGasto {

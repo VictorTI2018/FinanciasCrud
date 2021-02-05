@@ -1,9 +1,10 @@
-import { Observable, throwError } from 'rxjs';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar'
 
 import { Gastos } from 'src/app/models/gastos/gastos.model';
+import { AtualizarSituacao } from 'src/app/models/gastos/atualizarSituacao.model';
 
 export interface MessageOptions {
   msg: string
@@ -42,6 +43,10 @@ export class GastosService {
   delete (id: number): Observable<Gastos> {
     const urlBase = `${this.baseUrl}/${id}`
     return this.httpClient.delete<Gastos>(urlBase)
+  }
+
+  atualizarSituacao(situacaoConta: AtualizarSituacao): Observable<Gastos> {
+    return this.httpClient.patch<Gastos>(this.baseUrl, situacaoConta)
   }
 
   showMessage(messageOptions: MessageOptions) : void {

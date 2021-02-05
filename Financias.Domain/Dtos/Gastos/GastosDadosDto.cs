@@ -21,5 +21,10 @@ namespace Financias.Domain.Dtos
         public string Mes { get; set; }
 
         public decimal Valor { get; set; }
+
+        public SituacaoConta SituacaoConta { get; set; }
+
+        public string Descricao { get; set; }
+
     }
 }

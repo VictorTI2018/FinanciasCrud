@@ -18,7 +18,7 @@ export class TipoGastosPipe implements PipeTransform {
         valor = 'Mercado'
         break
       case 3:
-        valor = 'Case'
+        valor = 'Casa'
         break
       case 4:
         valor = 'Outros'

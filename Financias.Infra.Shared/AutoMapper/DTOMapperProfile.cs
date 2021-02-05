@@ -13,6 +13,9 @@ namespace Financias.Infra.Shared.AutoMapper
         {
             CreateMap<GastosDadosDto, Gastos>();
             CreateMap<Gastos, GastosDadosDto>();
+
+            CreateMap<GastoDto, Gastos>();
+            CreateMap<Gastos, GastoDto>();
         }
     }
 }

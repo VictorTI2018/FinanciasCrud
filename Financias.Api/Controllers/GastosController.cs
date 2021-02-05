@@ -2,12 +2,10 @@
 using Financias.Domain.Dtos;
 using Financias.Domain.Entities;
 using Financias.Domain.Interfaces.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using static Financias.Domain.Enum.Enums;
 
 namespace Financias.Api.Controllers
 {
@@ -62,6 +60,12 @@ namespace Financias.Api.Controllers
             {
                 return StatusCode(500, ex.Message);
             }
+        }
+
+        [HttpPatch]
+        public async Task<IActionResult> AtualizarSituacao(AtualizarSituacaoGastoDto atualizarSituacaoGastoDto)
+        {
+            return Ok(await _serviceGastos.AtualizarSituacao(atualizarSituacaoGastoDto));
         }
 
         [HttpDelete("{id}")]

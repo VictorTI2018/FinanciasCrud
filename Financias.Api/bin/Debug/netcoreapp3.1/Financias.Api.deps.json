@@ -1429,6 +1429,7 @@
       },
       "Financias.Infra.Data/1.0.0": {
         "dependencies": {
+          "AutoMapper": "10.1.1",
           "Financias.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.11",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.11"

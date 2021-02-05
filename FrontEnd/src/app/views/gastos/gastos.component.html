@@ -3,11 +3,17 @@
         Novo Gasto
     </button>
 </div>
-<mat-form-field appearance="fill" class="mt-1">
-    <mat-label>Selecione um Mês</mat-label>
-    <mat-select [(ngModel)]="mes" name="mes" (ngModelChange)="onChangeMes($event)">
-        <mat-option *ngFor="let mes of meses" 
-        [value]="mes">{{ mes }}</mat-option>
-    </mat-select>
-</mat-form-field>
-<app-gastos-list [gastos]="gastos" (editarFn)="editar($event)" (deletarFn)="deletar($event)"></app-gastos-list>
+<div class="container">
+    <mat-form-field appearance="fill" class="mt-1">
+        <mat-label>Selecione um Mês</mat-label>
+        <mat-select [(ngModel)]="mes" name="mes" (ngModelChange)="onChangeMes($event)">
+            <mat-option *ngFor="let mes of meses" 
+            [value]="mes">{{ mes }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="accent" *ngIf="gastos.length > 0" (click)="dialogValorTotal()">
+        Calcular Total
+    </button>
+</div>
+<app-gastos-list [gastos]="gastos" (editarFn)="editar($event)" (deletarFn)="deletar($event)" 
+(loadFn)="carregarTable()"></app-gastos-list>

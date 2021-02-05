@@ -1,3 +1,4 @@
+import { DialogTotalComponent } from './../../components/dialogs/dialog-total/dialog-total.component';
 import { DialogErrorComponent } from './../../components/dialogs/dialog-error/dialog-error.component';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Gastos } from './../../models/gastos/gastos.model';
@@ -14,6 +15,7 @@ import { GastosService } from '../../services/gastos/gastos.service'
 export class GastosComponent implements OnInit {
 
   dialogRef: MatDialogRef<DialogErrorComponent> | undefined
+  dialogTotal: MatDialogRef<DialogTotalComponent> | undefined
 
   meses = [
     'Janeiro',
@@ -78,9 +80,36 @@ export class GastosComponent implements OnInit {
     this.buscarTodosPorMes(mes)
   }
 
+  pegarTotalPorMes (): number {
+    const gastoDoMes = this.gastos.filter(x => x.mes === this.mes)
+    let total = 0
+    for(let i = 0; i < gastoDoMes.length; i++) {
+      total += gastoDoMes[i].valor
+    }
+    return total
+  }
+
+  pegarTotalDeCadaConta (): void {
+    const gastoContaDoMes = this.gastos.filter(x => x.mes === this.mes)
+    console.log(gastoContaDoMes)
+  }
+
+  dialogValorTotal () :void {
+    this.dialogTotal = this.dialog.open(DialogTotalComponent, {
+      disableClose: false
+    })
+
+    this.pegarTotalDeCadaConta()
+  }
+
+  carregarTable () :void {
+    this.buscarTodosPorMes(this.mes)
+  }
+
   buscarTodosPorMes (mes: string) {
     this.gastosService.getAll(mes)
     .subscribe(result => {
+      console.log(result)
       this.gastos = result
     })
   }

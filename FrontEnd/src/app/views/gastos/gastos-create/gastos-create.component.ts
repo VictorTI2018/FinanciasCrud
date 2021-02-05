@@ -54,10 +54,10 @@ export class GastosCreateComponent implements OnInit {
 
   tipoGastos = [
     { label: 'Agua', value: 0},
-    { label: 'Energia', value: 0},
-    { label: 'Mercado', value: 0},
-    { label: 'Casa', value: 0},
-    { label: 'Outros', value: 0}
+    { label: 'Energia', value: 1},
+    { label: 'Mercado', value: 2},
+    { label: 'Casa', value: 3},
+    { label: 'Outros', value: 4}
   ]
 
   tipoPagamento = [

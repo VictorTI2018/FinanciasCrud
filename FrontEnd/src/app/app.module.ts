@@ -16,7 +16,7 @@ import { MatCardModule } from '@angular/material/card'
 import { MatSelectModule } from '@angular/material/select'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { MatDialogModule } from '@angular/material/dialog'
-
+import { MatCheckboxModule } from '@angular/material/checkbox'
 import { ReactiveFormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -32,6 +32,7 @@ import { TipoGastosPipe } from './pipes/tipo-gastos.pipe';
 import { TipoPagamentoPipe } from './pipes/tipo-pagamento.pipe';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DialogErrorComponent } from './components/dialogs/dialog-error/dialog-error.component';
+import { DialogTotalComponent } from './components/dialogs/dialog-total/dialog-total.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { DialogErrorComponent } from './components/dialogs/dialog-error/dialog-e
     GastosCreateComponent,
     TipoGastosPipe,
     TipoPagamentoPipe,
-    DialogErrorComponent
+    DialogErrorComponent,
+    DialogTotalComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +64,8 @@ import { DialogErrorComponent } from './components/dialogs/dialog-error/dialog-e
     HttpClientModule,
     MatSnackBarModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCheckboxModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

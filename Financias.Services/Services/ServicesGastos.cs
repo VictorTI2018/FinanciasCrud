@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using static Financias.Domain.Enum.Enums;
 
 namespace Financias.Services.Services
 {
@@ -26,6 +27,11 @@ namespace Financias.Services.Services
         public async Task<GastoDto> BuscarPorId(int id)
         {
             return await _repositoryGastos.BuscarPorId(id);
+        }
+
+        public async Task<Gastos> AtualizarSituacao(AtualizarSituacaoGastoDto atualizarSituacaoGastoDto)
+        {
+            return await _repositoryGastos.AtualizarSituacao(atualizarSituacaoGastoDto);
         }
     }
 }
