@@ -41,7 +41,7 @@ export class GastosCreateComponent implements OnInit {
       Validators.required
     ]),
     descricao: new FormControl(''),
-    situacaoConta: new FormControl('')
+    situacaoConta: new FormControl(0)
   });
   submitted = false
 
@@ -172,7 +172,6 @@ export class GastosCreateComponent implements OnInit {
         descricao: result.descricao,
         situacaoConta: result.situacaoConta
       })
-      console.log('BuscarGasto: ', this.registerForm.value)
       this.gasto.id = this.registerForm.get('id')?.value
     })
   }

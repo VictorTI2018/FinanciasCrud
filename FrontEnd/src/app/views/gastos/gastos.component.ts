@@ -67,7 +67,6 @@ export class GastosComponent implements OnInit {
           })
           this.buscarTodosPorMes(this.mes)
         })
-        console.log()
       }
     })
   }
