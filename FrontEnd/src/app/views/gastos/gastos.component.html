@@ -6,7 +6,8 @@
 <div class="container">
     <mat-form-field appearance="fill" class="mt-1">
         <mat-label>Selecione um Mês</mat-label>
-        <mat-select [(ngModel)]="mes" name="mes" (ngModelChange)="onChangeMes($event)">
+        <mat-select [(ngModel)]="mes" name="mes" (ngModelChange)="onChangeMes($event)" 
+        title="Escolha um mês para lista">
             <mat-option *ngFor="let mes of meses" 
             [value]="mes">{{ mes }}</mat-option>
         </mat-select>
