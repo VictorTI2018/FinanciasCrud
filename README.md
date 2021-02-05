@@ -1,4 +1,4 @@
-# Crud_Basico
+# Financias FrontEnd
 ### Para executar o frontend é preciso instalar o angular global
 - npm install -g @angular/cli 
 ### Depois de instalar o angular, é preciso entrar na pasta Frontend 
