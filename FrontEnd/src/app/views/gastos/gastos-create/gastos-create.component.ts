@@ -37,7 +37,7 @@ export class GastosCreateComponent implements OnInit {
     mes: new FormControl('', [
       Validators.required
     ]),
-    valor: new FormControl(0, [
+    valor: new FormControl('', [
       Validators.required
     ]),
     descricao: new FormControl(''),
