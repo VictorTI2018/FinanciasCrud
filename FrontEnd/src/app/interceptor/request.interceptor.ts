@@ -4,17 +4,29 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpErrorResponse
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { retry, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class RequestInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor() { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const apiRequest = request.clone({ url: `${environment.baseUrl}/${request.url}` })
-    return next.handle(apiRequest);
+    return next.handle(apiRequest).pipe(retry(1),
+      catchError((error: HttpErrorResponse) => {
+        let errorMessage = '';
+        if (error.error instanceof ErrorEvent) {
+          errorMessage = `Error: ${error.error.message}`;
+        } else {
+          errorMessage = `Error Status: ${error.status}\nMessage: ${error.message}`;
+        }
+        window.alert("Erro na conexão com o servidor");
+        return throwError(errorMessage);
+      }))
   }
 }
