@@ -50,5 +50,30 @@ namespace Financias.Api.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
+        [HttpPut]
+        public async Task<IActionResult> Atualizar(GastosDadosDto gastosDadosDto)
+        {
+            Gastos gastosDados = _mapper.Map<GastosDadosDto, Gastos>(gastosDadosDto);
+            try
+            {
+                return Ok(await _serviceGastos.Update(gastosDados));
+            }catch(Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Deletar(int id)
+        {
+            try
+            {
+                return Ok(await _serviceGastos.Delete(id));
+            }catch(Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
     }
 }

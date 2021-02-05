@@ -29,8 +29,11 @@ table {
 
   i.edit {
     color: #607d8b;
+    cursor: pointer;
   }
 
   i.delete {
     color: #f44336;
+    cursor: pointer;
+
   }

@@ -14,12 +14,15 @@ export interface DialogOptions {
 })
 export class DialogErrorComponent implements OnInit {
 
-  public dialogOptions: DialogOptions = {}
-  
-
   constructor(public dialogRef: MatDialogRef<DialogErrorComponent>) { }
 
   ngOnInit(): void {
+  }
+
+  public dialogOptions: DialogOptions = {
+    title: '',
+    message: '',
+    buttonText: ''
   }
 
 }

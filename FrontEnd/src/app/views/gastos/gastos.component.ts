@@ -1,3 +1,5 @@
+import { DialogErrorComponent } from './../../components/dialogs/dialog-error/dialog-error.component';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Gastos } from './../../models/gastos/gastos.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -10,6 +12,8 @@ import { GastosService } from '../../services/gastos/gastos.service'
   styleUrls: ['./gastos.component.css']
 })
 export class GastosComponent implements OnInit {
+
+  dialogRef: MatDialogRef<DialogErrorComponent> | undefined
 
   meses = [
     'Janeiro',
@@ -30,7 +34,8 @@ export class GastosComponent implements OnInit {
 
   gastos: Gastos[] = []
 
-  constructor(private router: Router, private gastosService: GastosService) { }
+  constructor(private router: Router, private gastosService: GastosService, 
+    private dialog: MatDialog) { }
 
   
 
@@ -39,6 +44,30 @@ export class GastosComponent implements OnInit {
 
   editar (event: any) {
     this.router.navigate(['/gastos/dados', event])
+  }
+
+  deletar(event: any) {
+    this.dialogRef = this.dialog.open(DialogErrorComponent, {
+      disableClose: false
+    })
+
+    this.dialogRef.componentInstance.dialogOptions.message = "Deseja realmente apagar esse gasto?"
+    this.dialogRef.componentInstance.dialogOptions.title = "Deletar"
+    this.dialogRef.componentInstance.dialogOptions.buttonText = "Ok"
+    this.dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.gastosService.delete(Number(event))
+        .subscribe(result => {
+          this.gastosService.showMessage({
+            msg: 'Gasto apagado com sucesso!',
+            duration: 3000,
+            classBgColor: 'alert-success'
+          })
+          this.buscarTodosPorMes(this.mes)
+        })
+        console.log()
+      }
+    })
   }
 
   novoGasto () : void {

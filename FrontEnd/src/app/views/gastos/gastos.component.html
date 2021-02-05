@@ -10,4 +10,4 @@
         [value]="mes">{{ mes }}</mat-option>
     </mat-select>
 </mat-form-field>
-<app-gastos-list [gastos]="gastos" (editarFn)="editar($event)"></app-gastos-list>
+<app-gastos-list [gastos]="gastos" (editarFn)="editar($event)" (deletarFn)="deletar($event)"></app-gastos-list>

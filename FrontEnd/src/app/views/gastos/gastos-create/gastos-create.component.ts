@@ -26,6 +26,7 @@ export class GastosCreateComponent implements OnInit {
   dialogRef: MatDialogRef<DialogErrorComponent>| undefined
 
   registerForm = new FormGroup({
+    id: new FormControl(0),
     tipoGasto: new FormControl('', [
       Validators.required
     ]),
@@ -44,6 +45,7 @@ export class GastosCreateComponent implements OnInit {
   matcher = new MyErrorStateMatcher()
 
   gasto: Gastos = {
+    id: 0,
     tipoGasto: 0,
     tipoPagamento: 0,
     mes: '',
@@ -96,7 +98,12 @@ export class GastosCreateComponent implements OnInit {
       this.errorMessage()
       return
     }
-    this.salvar()
+    if (this.registerForm.value.id > 0) {
+      this.atualizar()
+    } else {
+      this.salvar()
+    }
+    
   }
 
   salvar (): void {
@@ -112,7 +119,22 @@ export class GastosCreateComponent implements OnInit {
     this.voltar()
   }
 
+  atualizar(): void {
+    this.gasto = this.registerForm.value
+    this.gastosService.update(this.gasto)
+    .subscribe(result => {
+      this.gastosService.showMessage({
+        msg: 'Gasto atualizado com sucesso!',
+        duration: 3000,
+        classBgColor: 'alert-success'
+      })
+    })
+    this.voltar()
+
+  }
+
   voltar () {
+    this.onReset()
     this.router.navigate(['/gastos'])
   }
 
@@ -135,6 +157,7 @@ export class GastosCreateComponent implements OnInit {
     this.gastosService.getById(id)
     .subscribe(result => {
       this.registerForm.patchValue({
+        id: result.id,
         tipoGasto: result.tipoGasto,
         tipoPagamento: result.tipoPagamento,
         mes: result.mes,

@@ -35,6 +35,15 @@ export class GastosService {
     return this.httpClient.post<Gastos>(this.baseUrl, gastos)
   }
 
+  update(gastos: Gastos): Observable<Gastos> {
+    return this.httpClient.put<Gastos>(this.baseUrl, gastos)
+  }
+
+  delete (id: number): Observable<Gastos> {
+    const urlBase = `${this.baseUrl}/${id}`
+    return this.httpClient.delete<Gastos>(urlBase)
+  }
+
   showMessage(messageOptions: MessageOptions) : void {
     this.snackBar.open(messageOptions.msg, 'X', {
       duration: messageOptions.duration,

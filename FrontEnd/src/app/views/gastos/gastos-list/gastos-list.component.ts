@@ -13,6 +13,9 @@ export class GastosListComponent implements OnInit {
   @Output()
   editarFn: EventEmitter<any> = new EventEmitter<any>()
 
+  @Output()
+  deletarFn: EventEmitter<any> = new EventEmitter<any>()
+
   headers = [
     { label: 'Codigo', value: 'id' },
     { label: 'Gasto', value: 'tipoGasto' },
@@ -29,5 +32,9 @@ export class GastosListComponent implements OnInit {
   
   editar (id: any) {
     this.editarFn.emit(id)
+  }
+
+  deletar(id: any) {
+    this.deletarFn.emit(id)
   }
 }
