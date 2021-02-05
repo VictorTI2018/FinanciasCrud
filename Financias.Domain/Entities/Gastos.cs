@@ -24,5 +24,7 @@ namespace Financias.Domain.Entities
 
         [Required]
         public decimal Valor { get; set; }
+
+        public SituacaoConta SituacaoConta { get; set; }
     }
 }

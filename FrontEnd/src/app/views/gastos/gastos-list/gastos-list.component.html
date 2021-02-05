@@ -1,4 +1,4 @@
-<table class="mat-elevation-z2">
+<table class="mat-elevation-z2" *ngIf="gastos.length > 0; else vazio">
     <thead>
         <tr>
             <th *ngFor="let header of headers">
@@ -7,7 +7,7 @@
             <th >Ações</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody >
         <tr *ngFor="let item of gastos">
             <td >
                 {{ item.id}}
@@ -30,4 +30,8 @@
             </td>
         </tr>
     </tbody>
+    
 </table>
+<ng-template #vazio>
+    <p class="vazio">Não há gastos, para esse mês no momento!</p>
+</ng-template>

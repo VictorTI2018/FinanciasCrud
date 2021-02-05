@@ -21,5 +21,11 @@ namespace Financias.Domain.Enum
             CartaoDebito,
             Dinheiro
         };
+
+        public enum SituacaoConta
+        {
+            Pendente,
+            Pago
+        }
     }
 }
