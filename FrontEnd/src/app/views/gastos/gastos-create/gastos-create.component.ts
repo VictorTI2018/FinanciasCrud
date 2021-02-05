@@ -1,6 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms'
+import { ErrorStateMatcher } from '@angular/material/core';
+import { MatSnackBar } from '@angular/material/snack-bar'
+import { MatDialogRef, MatDialog } from '@angular/material/dialog'
+
 import { Gastos } from 'src/app/models/gastos/gastos.model';
+import { GastosService } from 'src/app/services/gastos/gastos.service';
+import { DialogErrorComponent } from '../../../components/dialogs/dialog-error/dialog-error.component'
+
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 @Component({
   selector: 'app-gastos-create',
@@ -8,6 +22,17 @@ import { Gastos } from 'src/app/models/gastos/gastos.model';
   styleUrls: ['./gastos-create.component.css']
 })
 export class GastosCreateComponent implements OnInit {
+
+  dialogRef: MatDialogRef<DialogErrorComponent>| undefined
+
+  registerForm = new FormGroup({
+    tipoGasto: new FormControl('', [
+      Validators.required
+    ])
+  });
+  submitted = false
+
+  matcher = new MyErrorStateMatcher()
 
   tipoGastos = [
     { label: 'Agua', value: 0},
@@ -38,21 +63,42 @@ export class GastosCreateComponent implements OnInit {
     'Dezembro'
   ]
 
-  gastosDados: Gastos = {
-    id: 0,
-    tipoGasto: 0,
-    tipoPagamento: 0,
-    nomeCartao: '',
-    valor: 0,
-    mes: ''
-  }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private gastosService: GastosService, 
+    private snackBar: MatSnackBar,) { }
 
   ngOnInit(): void {
+   
+  }
+
+  handleSubmit () :void {
+    this.submitted = true
+    if (this.registerForm.invalid) {
+      this.errorMessage()
+      return
+    }
+  }
+
+  salvar (): void {
+
   }
 
   voltar () {
     this.router.navigate(['/gastos'])
+  }
+
+  get form() { return this.registerForm.controls }
+
+  onReset () {
+    this.submitted = false
+    this.registerForm.reset()
+  }
+
+  errorMessage () :void {
+    this.gastosService.showMessage({
+      msg: 'Por favor, corrija os campos em vermelhos',
+      duration: 3000,
+      classBgColor: 'alert-danger'
+    })
   }
 }

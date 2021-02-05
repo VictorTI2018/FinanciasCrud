@@ -8,7 +8,7 @@ import { Gastos } from 'src/app/models/gastos/gastos.model';
 export interface MessageOptions {
   msg: string
   duration: number
-  classColor: string,
+  classColor?: string,
   classBgColor: string
 }
 
@@ -35,7 +35,7 @@ export class GastosService {
       duration: messageOptions.duration,
       horizontalPosition: 'right',
       verticalPosition: 'top',
-      panelClass: messageOptions.classColor
+      panelClass: messageOptions.classBgColor
     })
   }
 }
