@@ -25,7 +25,8 @@
                 {{ item.valor | currency}}
             </td>
             <td>
-                <mat-checkbox class="example-margin"
+                <mat-checkbox class="example-margin pendente"
+                [ngClass]="{'pago': item.situacao === true}"
                 [(ngModel)]="item.situacao"
                 (ngModelChange)="onChangeSituacaoConta($event, item.id)"
                 [checked]="item.situacaoConta === 0 ? false : true">{{ item.situacaoConta === 0 ? 'Pendente' : 'Pago'}}</mat-checkbox>

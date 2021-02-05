@@ -81,7 +81,8 @@ export class GastosComponent implements OnInit {
   }
 
   pegarTotalPorMes (): number {
-    const gastoDoMes = this.gastos.filter(x => x.mes === this.mes)
+    const gastoDoMes = this.gastos.filter(x => x.mes === this.mes 
+      && x.situacaoConta !== 1)
     let total = 0
     for(let i = 0; i < gastoDoMes.length; i++) {
       total += gastoDoMes[i].valor
@@ -89,17 +90,13 @@ export class GastosComponent implements OnInit {
     return total
   }
 
-  pegarTotalDeCadaConta (): void {
-    const gastoContaDoMes = this.gastos.filter(x => x.mes === this.mes)
-    console.log(gastoContaDoMes)
-  }
-
   dialogValorTotal () :void {
     this.dialogTotal = this.dialog.open(DialogTotalComponent, {
       disableClose: false
     })
 
-    this.pegarTotalDeCadaConta()
+    this.dialogTotal.componentInstance.dialogTotalOptions.mes = this.mes
+    this.dialogTotal.componentInstance.dialogTotalOptions.total = this.pegarTotalPorMes()
   }
 
   carregarTable () :void {
@@ -109,7 +106,6 @@ export class GastosComponent implements OnInit {
   buscarTodosPorMes (mes: string) {
     this.gastosService.getAll(mes)
     .subscribe(result => {
-      console.log(result)
       this.gastos = result
     })
   }

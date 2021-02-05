@@ -9,7 +9,6 @@ export interface Contas {
 export interface DialogTotalOptions {
   total: number
   mes: string
-  contas: Contas[]
 }
 
 @Component({
@@ -26,8 +25,7 @@ export class DialogTotalComponent implements OnInit {
 
   public dialogTotalOptions: DialogTotalOptions = {
     total: 0,
-    mes: '',
-    contas: []
+    mes: ''
   }
 
 }

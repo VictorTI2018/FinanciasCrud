@@ -1,10 +1,6 @@
-<h1 mat-dialog-title>Total do Mes: {{ dialogTotalOptions.mes }}</h1>
+<h1 mat-dialog-title>Mes: {{ dialogTotalOptions.mes }}</h1>
 <div mat-dialog-content>
-    <div *ngFor="let conta of dialogTotalOptions.contas">
-        <p>Conta: {{ conta.nome }}</p>
-        <p>Total: {{ conta.total }}</p>
-    </div>
-    <p>Total: {{ dialogTotalOptions.total }}</p>
+    <p class="total">Total do mês: {{ dialogTotalOptions.total }}</p>
 </div>
 <div mat-dialog-actions>
     <button mat-raised-button color="primary" (click)="dialogRef.close(true)">Fechar</button>
