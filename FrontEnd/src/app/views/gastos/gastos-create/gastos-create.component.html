@@ -4,17 +4,23 @@
     </mat-card-title>
     <form [formGroup]="registerForm" (ngSubmit)="handleSubmit()">
         <mat-card-content>
-
+            <div class="row-situacao" *ngIf="gasto.id && gasto.id > 0">
+                <div class="situacao-box pendente" [ngClass]="{'pago': situacaoConta }">
+                    {{ situacaoConta ? 'Pago' : 'Pendente' }}
+                </div>
+            </div>
             <div class="row-container">
                 <mat-form-field appearance="legacy" class="form-group">
                     <mat-label>Tipo do Gasto</mat-label>
-                    <mat-select formControlName="tipoGasto" [ngClass]="{'is-invalid': submitted && form.tipoGasto.errors }">
+                    <mat-select formControlName="tipoGasto"
+                        [ngClass]="{'is-invalid': submitted && form.tipoGasto.errors }">
                         <mat-option *ngFor="let tipo of tipoGastos" [value]="tipo.value">{{ tipo.label }}</mat-option>
                     </mat-select>
                 </mat-form-field>
                 <mat-form-field appearance="legacy" class="form-group">
                     <mat-label>Tipo do Pagamento</mat-label>
-                    <mat-select formControlName="tipoPagamento" [ngClass]="{'is-invalid': submitted && form.tipoGasto.errors }">
+                    <mat-select formControlName="tipoPagamento"
+                        [ngClass]="{'is-invalid': submitted && form.tipoGasto.errors }">
                         <mat-option *ngFor="let tipo of tipoPagamento" [value]="tipo.value">{{ tipo.label }}
                         </mat-option>
                     </mat-select>
@@ -27,15 +33,20 @@
                 </mat-form-field>
                 <mat-form-field appearance="legacy" class="form-group">
                     <mat-label>Valor</mat-label>
-                    <input type="number" matInput placeholder="Valor do gasto..." formControlName="valor" [ngClass]="{'is-invalid': submitted && form.tipoGasto.errors }">
+                    <input type="number" matInput placeholder="Valor do gasto..." formControlName="valor"
+                        [ngClass]="{'is-invalid': submitted && form.tipoGasto.errors }">
                 </mat-form-field>
+                <mat-form-field class="form-group-full">
+                    <mat-label>Descrição</mat-label>
+                    <textarea matInput placeholder="Detalhes do gasto..." formControlName="descricao"></textarea>
+                </mat-form-field>
+
             </div>
 
         </mat-card-content>
         <mat-card-actions class="button-container">
             <button mat-raised-button color="warn" (click)="voltar()">Voltar</button>
-            <button mat-raised-button color="primary" 
-            [disabled]="!registerForm.valid">Salvar</button>
+            <button mat-raised-button color="primary" [disabled]="!registerForm.valid">Salvar</button>
         </mat-card-actions>
     </form>
 </mat-card>

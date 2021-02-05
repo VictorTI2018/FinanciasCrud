@@ -44,11 +44,3 @@ i.delete {
   font-size: 1.2rem;
   margin-top: 10px;
 }
-
-.pendente {
-  color: rgb(197, 13, 13);
-}
-
-.pago {
-  color: rgba(10, 233, 10, 0.884);
-}

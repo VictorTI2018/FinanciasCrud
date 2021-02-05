@@ -1,3 +1,4 @@
+import { SituacaoConta } from './../../../models/gastos/gastos.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms'
@@ -38,18 +39,23 @@ export class GastosCreateComponent implements OnInit {
     ]),
     valor: new FormControl(0, [
       Validators.required
-    ])
+    ]),
+    descricao: new FormControl(''),
+    situacaoConta: new FormControl('')
   });
   submitted = false
 
   matcher = new MyErrorStateMatcher()
+
+  situacaoConta: boolean = false
 
   gasto: Gastos = {
     id: 0,
     tipoGasto: 0,
     tipoPagamento: 0,
     mes: '',
-    valor: 0
+    valor: 0,
+    descricao: ''
   }
 
   tipoGastos = [
@@ -156,13 +162,18 @@ export class GastosCreateComponent implements OnInit {
   buscarGasto (id: number) {
     this.gastosService.getById(id)
     .subscribe(result => {
+      this.situacaoConta = result.situacaoConta !== 0
       this.registerForm.patchValue({
         id: result.id,
         tipoGasto: result.tipoGasto,
         tipoPagamento: result.tipoPagamento,
         mes: result.mes,
-        valor: result.valor
+        valor: result.valor,
+        descricao: result.descricao,
+        situacaoConta: result.situacaoConta
       })
+      console.log('BuscarGasto: ', this.registerForm.value)
+      this.gasto.id = this.registerForm.get('id')?.value
     })
   }
 }

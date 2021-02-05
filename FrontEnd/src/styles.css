@@ -1,45 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100vh; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100vh;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .bg-blue {
-    color: rgb(7, 126, 223);
+  color: rgb(7, 126, 223);
 }
 
 .bg-black {
-    color: #000;
+  color: #000;
 }
 
 .mb-1 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .mr-1 {
-    margin-right:  10px;
+  margin-right: 10px;
 }
 
 .ml-1 {
-    margin-left: 10px;;
+  margin-left: 10px;
 }
 
 .mt-1 {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
-
 .invalid {
-    color: red !important
+  color: red !important;
 }
 
 .alert-danger {
-    background-color: rgb(228, 32, 32);
-    color: #FFF;
-    font-size: 1.2rem;
+  background-color: rgb(228, 32, 32);
+  color: #fff;
+  font-size: 1.2rem;
 }
 
 .alert-success {
-    background-color: rgb(7, 196, 7);
-    color: #FFF;
-    font-size: 1.2rem;
+  background-color: rgb(7, 196, 7);
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.pendente {
+  color: rgb(197, 13, 13);
+}
+
+.pago {
+  color: rgba(10, 233, 10, 0.884);
 }

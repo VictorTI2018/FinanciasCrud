@@ -1,17 +1,39 @@
 .row-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .form-group {
-    margin-bottom: 10px;
-   flex-basis: 48%;
+  margin-bottom: 10px;
+  flex-basis: 48%;
 }
 
-
+.form-group-full {
+  margin-bottom: 10px;
+  flex-basis: 100%;
+}
 
 .button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.row-situacao {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    font-weight: 500;
 }
+
+.situacao-box {
+    height: 60px;
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
